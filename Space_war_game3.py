@@ -43,17 +43,15 @@ def enemy_movments (eps):
             i[0] += 1
     return eps
     
-def tbANDe (bult_pos , enemy_pos , score):
+def tbANDe (bult_pos , enemy_pos ):
     eab = []
     for i in bult_pos:
         for j in enemy_pos:
             if i == j :
                 bult_pos.remove(i)
                 enemy_pos.remove(j)
-                score += 1
     eab.append(bult_pos)
     eab.append(enemy_pos)
-    eab.append(score)
     return eab
                 
 
@@ -74,7 +72,6 @@ player_colAshot = [4 , 0]
 win = 0 
 bult_postions = []
 enemies_postion = []
-score = 1
 s = 1
 a = 1
 counter = 0
@@ -96,7 +93,7 @@ while win == 0 :
         counter  = 0 
         
     player_colAshot[1] = 0 
-    print(f"\n\n\n\n\n\nSCORE : {score}\n\n\n\n\n\n{game_table}\n\n\n")
+    print(f"\n\n\n\n\n\n\n\n\n\n\n\n{game_table}\n\n\n")
     game_table[19][player_colAshot[0]] = 0
     move = input()
     player_colAshot= cpps(move,player_colAshot)
@@ -104,7 +101,6 @@ while win == 0 :
     
     enemies_postion = tbANDe(bult_postions , enemies_postion , score)[1]
     bult_postions = tbANDe(bult_postions , enemies_postion , score)[0]
-    score += tbANDe(bult_postions , enemies_postion , score)[2]
 
     b = 0 
     for i in enemies_postion:
