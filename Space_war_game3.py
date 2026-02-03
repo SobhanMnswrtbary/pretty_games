@@ -99,8 +99,8 @@ while win == 0 :
     player_colAshot= cpps(move,player_colAshot)
 
     
-    enemies_postion = tbANDe(bult_postions , enemies_postion , score)[1]
-    bult_postions = tbANDe(bult_postions , enemies_postion , score)[0]
+    enemies_postion = tbANDe(bult_postions , enemies_postion )[1]
+    bult_postions = tbANDe(bult_postions , enemies_postion )[0]
 
     b = 0 
     for i in enemies_postion:
